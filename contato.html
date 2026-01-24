@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+<link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #3a1b5a, #6a3fa0, #b18ae0);
+      color: #F1ECF8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #3A1B5A;
+      padding: 1rem 0;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    nav a {
+      color: #E6D8A8;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: #F5EBCB;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+    }
+
+    header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 4rem;
+      letter-spacing: 3px;
+      color: #C9A24D;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    header h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #E6D8A8;
+      margin-top: 0.6rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .loc-quote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.25);
+      border-radius: 4px;
+    }
+
+    .loc-quote label {
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .loc-quote input,
+    .loc-quote textarea {
+      width: 100%;
+      margin-top: 0.4rem;
+      padding: 0.6rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .loc-quote button {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.7rem 1.6rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background-color: #C9A24D;
+  color: #3A1B5A;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+    .loc-quote button:hover {
+      background-color: #E6D8A8;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.6rem;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="sobrenos.html">Sobre nós</a>
+  <a href="regra.html">Regra</a>
+  <a href="loc.html">LOC</a>
+  <a href="catecismo.html">Catecismo</a>
+  <a href="postagens.html">Postagens</a>
+  <a href="documentos.html">Documentos</a>
+  <a href="inicio.html">Início</a>
+</nav>
+
+<header>
+  <h1>CONTATO</h1>
+  <h2>Fale conosco</h2>
+</header>
+
+<main>
+  <blockquote class="loc-quote">
+
+    <form action="https://formsubmit.co/andregiraldeli345@gmail.com" method="POST">
+
+      <input type="hidden" name="_subject" value="Nova mensagem pelo site">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label>
+        Nome
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Telefone (opcional)
+        <input type="tel" name="phone">
+      </label>
+
+      <label>
+        Assunto
+        <input type="text" name="subject" required>
+      </label>
+
+      <label>
+        Mensagem
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+      <button type="submit">Enviar mensagem</button>
+    </form>
+
+  </blockquote>
+</main>
+
+</body>
+</html>
