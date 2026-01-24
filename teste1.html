@@ -39,8 +39,9 @@
 
     nav .logo-nav {
       font-family: 'EB Garamond', serif;
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #C9A24D;
+      letter-spacing: 1px;
     }
 
     nav ul {
@@ -84,7 +85,7 @@
 
     header h1 {
       font-family: 'EB Garamond', serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       letter-spacing: 2px;
       color: #C9A24D;
       margin: 0;
@@ -106,11 +107,10 @@
     }
 
     .header-block {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      gap: 1.4rem;
     }
 
     .logo-header {
@@ -202,7 +202,7 @@
     /* RESPONSIVO */
     @media (max-width: 900px) {
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
       header h2 {
         font-size: 1.2rem;
@@ -214,13 +214,18 @@
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
       }
       header h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       .logo-header {
         height: 100px;
+      }
+
+      nav .logo-nav {
+        font-size: 1.8rem;
+        margin-left: 0.5rem; /* espaço extra do titulo no mobile */
       }
 
       nav ul {
@@ -228,10 +233,12 @@
         width: 100%;
         max-height: 0;
         overflow: hidden;
+        transition: max-height 0.3s ease;
+        margin-top: 0.5rem;
       }
 
       nav ul.show {
-        max-height: 500px; /* altura suficiente para todos os links */
+        max-height: 500px;
       }
 
       .hamburger {
@@ -260,116 +267,117 @@
     </ul>
   </nav>
 
-  <header>
-    <div class="header-block">
-      <img src="logo.png" alt="Brasão da Sociedade Cristo Operário" class="logo-header" />
-      <div class="header-text">
-        <h2>sociedade anglo-católico do cristo operário</h2>
-        <h1>Cristo Operário</h1>
-        <p>"Lex orandi, lex credendi"</p>
-      </div>
+<header>
+  <div class="header-block">
+    <img src="logo.png" alt="Brasão da Sociedade Cristo Operário" class="logo-header" />
+    <div class="header-text">
+      <h2>sociedade anglo-católico do cristo operário</h2>
+      <h1>Cristo Operário</h1>
+      <p>"Lex orandi, lex credendi"</p>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main id="inicio">
-    <div id="posts-header">
-      <h2>Novidades</h2>
-      <div id="filters">
-        <select id="filter-time" aria-label="Filtro de tempo">
-          <option value="all">Todos os tempos</option>
-          <option value="30days">Últimos 30 dias</option>
-          <option value="6months">Últimos 6 meses</option>
-          <option value="1year">Último ano</option>
-        </select>
-        <input type="search" id="search-input" placeholder="Pesquisar..." aria-label="Pesquisar" />
-      </div>
+<main id="inicio">
+  <div id="posts-header">
+    <h2>Novidades</h2>
+    <div id="filters">
+      <select id="filter-time" aria-label="Filtro de tempo">
+        <option value="all">Todos os tempos</option>
+        <option value="30days">Últimos 30 dias</option>
+        <option value="6months">Últimos 6 meses</option>
+        <option value="1year">Último ano</option>
+      </select>
+      <input type="search" id="search-input" placeholder="Pesquisar..." aria-label="Pesquisar" />
     </div>
+  </div>
 
-    <article class="post" data-date="2026-01-24">
-      <h3>Primeira páginas do Site</h3>
-      <small>24 de Janeiro de 2026</small>
-      <p>E aconteceu que, na noite do vigésimo terceiro dia do primeiro mês do ano de dois mil e vinte e seis, e na madrugada do dia seguinte, Adel trabalhou com diligência.</p>
-      <p>E ordenou o índice do sítio, e estabeleceu a página do Livro de Oração Comum, e a página da Regra, e a página de Contato, para que a obra tivesse forma e acesso.</p>
-    </article>
+  <article class="post" data-date="2026-01-24">
+    <h3>Primeira páginas do Site</h3>
+    <small>24 de Janeiro de 2026</small>
+    <p>E aconteceu que, na noite do vigésimo terceiro dia do primeiro mês do ano de dois mil e vinte e seis, e na madrugada do dia seguinte, Adel trabalhou com diligência.</p>
+    <p>E ordenou o índice do sítio, e estabeleceu a página do Livro de Oração Comum, e a página da Regra, e a página de Contato, para que a obra tivesse forma e acesso.</p>
+  </article>
 
-    <article class="post" data-date="2026-01-16">
-      <h3>Primeiros membros</h3>
-      <small>16 de Janeiro de 2026</small>
-      <p>E aconteceu que, no décimo sexto dia do primeiro mês do ano de dois mil e vinte e seis, vieram juntar-se à Sociedade o Irmão Rafael, o Irmão Caetano e o Irmão João, todos da Igreja Católica Apostólica Romana.</p>
-      <p>E foram eles os primeiros a entrar na Sociedade Anglo-Católica d’Cristo Operário após a sua fundação.</p>
-    </article>
+  <article class="post" data-date="2026-01-16">
+    <h3>Primeiros membros</h3>
+    <small>16 de Janeiro de 2026</small>
+    <p>E aconteceu que, no décimo sexto dia do primeiro mês do ano de dois mil e vinte e seis, vieram juntar-se à Sociedade o Irmão Rafael, o Irmão Caetano e o Irmão João, todos da Igreja Católica Apostólica Romana.</p>
+    <p>E foram eles os primeiros a entrar na Sociedade Anglo-Católica d’Cristo Operário após a sua fundação.</p>
+  </article>
 
-    <article class="post" data-date="2026-01-15">
-      <h3>Fundação</h3>
-      <small>15 de Janeiro de 2026</small>
-      <p>E aconteceu que, no décimo quinto dia do primeiro mês do ano de dois mil e vinte e seis, foi fundada a Sociedade Anglo-Católica d’Cristo Operário.</p>
-      <p>E Adel, acólito da Igreja Episcopal Anglicana do Brasil, e Victoria, socióloga da Igreja Católica Apostólica Romana, e o Irmão Daeron, seminarista da mesma Igreja, ajuntaram-se em propósito comum.</p>
-    </article>
-  </main>
+  <article class="post" data-date="2026-01-15">
+    <h3>Fundação</h3>
+    <small>15 de Janeiro de 2026</small>
+    <p>E aconteceu que, no décimo quinto dia do primeiro mês do ano de dois mil e vinte e seis, foi fundada a Sociedade Anglo-Católica d’Cristo Operário.</p>
+    <p>E Adel, acólito da Igreja Episcopal Anglicana do Brasil, e Victoria, socióloga da Igreja Católica Apostólica Romana, e o Irmão Daeron, seminarista da mesma Igreja, ajuntaram-se em propósito comum.</p>
+  </article>
+</main>
 
-  <script>
-    // Filtro de posts
-    (() => {
-      const filterTime = document.getElementById('filter-time');
-      const searchInput = document.getElementById('search-input');
-      const posts = Array.from(document.querySelectorAll('article.post'));
+<script>
+  // Filtro de posts
+  (() => {
+    const filterTime = document.getElementById('filter-time');
+    const searchInput = document.getElementById('search-input');
+    const posts = Array.from(document.querySelectorAll('article.post'));
 
-      function daysSince(dateString) {
-        const today = new Date();
-        const postDate = new Date(dateString);
-        const diffTime = today - postDate;
-        return diffTime / (1000 * 60 * 60 * 24);
-      }
+    function daysSince(dateString) {
+      const today = new Date();
+      const postDate = new Date(dateString);
+      const diffTime = today - postDate;
+      return diffTime / (1000 * 60 * 60 * 24);
+    }
 
-      function filterPosts() {
-        const timeValue = filterTime.value;
-        const searchText = searchInput.value.trim().toLowerCase();
+    function filterPosts() {
+      const timeValue = filterTime.value;
+      const searchText = searchInput.value.trim().toLowerCase();
 
-        posts.forEach(post => {
-          const dateStr = post.getAttribute('data-date');
-          const daysDiff = daysSince(dateStr);
+      posts.forEach(post => {
+        const dateStr = post.getAttribute('data-date');
+        const daysDiff = daysSince(dateStr);
 
-          let showByTime = false;
-          switch (timeValue) {
-            case '30days':
-              showByTime = daysDiff <= 30;
-              break;
-            case '6months':
-              showByTime = daysDiff <= 183;
-              break;
-            case '1year':
-              showByTime = daysDiff <= 365;
-              break;
-            default:
-              showByTime = true;
-          }
+        let showByTime = false;
+        switch (timeValue) {
+          case '30days':
+            showByTime = daysDiff <= 30;
+            break;
+          case '6months':
+            showByTime = daysDiff <= 183;
+            break;
+          case '1year':
+            showByTime = daysDiff <= 365;
+            break;
+          default:
+            showByTime = true;
+        }
 
-          const title = post.querySelector('h3')?.textContent.toLowerCase() || '';
-          const body = post.querySelector('p')?.textContent.toLowerCase() || '';
-          const date = post.querySelector('small')?.textContent.toLowerCase() || '';
+        const title = post.querySelector('h3')?.textContent.toLowerCase() || '';
+        const body = post.querySelector('p')?.textContent.toLowerCase() || '';
+        const date = post.querySelector('small')?.textContent.toLowerCase() || '';
 
-          const showBySearch =
-            title.includes(searchText) ||
-            body.includes(searchText) ||
-            date.includes(searchText);
+        const showBySearch =
+          title.includes(searchText) ||
+          body.includes(searchText) ||
+          date.includes(searchText);
 
-          post.style.display = (showByTime && showBySearch) ? '' : 'none';
-        });
-      }
+        post.style.display = (showByTime && showBySearch) ? '' : 'none';
+      });
+    }
 
-      filterTime.addEventListener('change', filterPosts);
-      searchInput.addEventListener('input', filterPosts);
+    filterTime.addEventListener('change', filterPosts);
+    searchInput.addEventListener('input', filterPosts);
 
-      filterPosts();
-    })();
+    filterPosts();
+  })();
 
-    // Menu hamburguer
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  // Menu hamburguer
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  </script>
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>
