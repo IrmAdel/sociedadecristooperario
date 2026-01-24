@@ -42,6 +42,7 @@
       font-size: 2rem;
       color: #C9A24D;
       letter-spacing: 1px;
+      margin-left: 0.5rem; /* distância no mobile */
     }
 
     nav ul {
@@ -219,15 +220,18 @@
       header h2 {
         font-size: 1.1rem;
       }
+
+      /* Logo em cima no mobile */
+      .header-block {
+        flex-direction: column;
+        gap: 1.8rem;
+      }
+
       .logo-header {
-        height: 100px;
+        height: 120px;
       }
 
-      nav .logo-nav {
-        font-size: 1.8rem;
-        margin-left: 0.5rem; /* espaço extra do titulo no mobile */
-      }
-
+      /* Nav hamburguer */
       nav ul {
         flex-direction: column;
         width: 100%;
@@ -243,6 +247,11 @@
 
       .hamburger {
         display: flex;
+      }
+
+      nav .logo-nav {
+        font-size: 1.8rem;
+        margin-left: 0.5rem; /* distância do título */
       }
     }
   </style>
@@ -268,10 +277,8 @@
   </nav>
 
 <header>
-  <div class="header-block" style="flex-direction: column; gap: 2rem;">
-    <!-- Logo maior e em cima -->
-    <img src="logo.png" alt="Brasão da Sociedade Cristo Operário" class="logo-header" style="height: 250px; width: auto;" />
-    
+  <div class="header-block">
+    <img src="logo.png" alt="Brasão da Sociedade Cristo Operário" class="logo-header" />
     <div class="header-text">
       <h2>sociedade anglo-católico do cristo operário</h2>
       <h1>Cristo Operário</h1>
@@ -279,7 +286,6 @@
     </div>
   </div>
 </header>
-
 
 <main id="inicio">
   <div id="posts-header">
@@ -295,6 +301,7 @@
     </div>
   </div>
 
+  <!-- POSTS -->
   <article class="post" data-date="2026-01-24">
     <h3>Primeira páginas do Site</h3>
     <small>24 de Janeiro de 2026</small>
