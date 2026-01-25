@@ -6,11 +6,17 @@
   <title>LOC</title>
 
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<link rel="icon" type="image/png" href="favicon.png">
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom, #3a1b5a, #6a3fa0, #b18ae0);
       color: #F1ECF8;
@@ -19,28 +25,61 @@
       flex-direction: column;
     }
 
+    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
       background-color: #3A1B5A;
-      padding: 1rem 0;
-      text-align: center;
+      padding: 0.8rem 1rem;
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    nav a {
+    nav .logo-nav {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      color: #C9A24D;
+      letter-spacing: 1px;
+      margin-left: 0.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      transition: max-height 0.3s ease;
+    }
+
+    nav ul li a {
       color: #E6D8A8;
       text-decoration: none;
-      margin: 0 1.5rem;
       font-weight: 700;
       font-size: 1rem;
     }
 
-    nav a:hover {
+    nav ul li a:hover {
       color: #F5EBCB;
     }
 
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #E6D8A8;
+    }
+
+    /* HEADER */
     header {
       text-align: center;
       padding: 4rem 1rem 3rem;
@@ -51,7 +90,6 @@
       font-size: 4rem;
       letter-spacing: 3px;
       color: #C9A24D;
-      margin: 0;
       text-transform: uppercase;
     }
 
@@ -63,88 +101,97 @@
       margin-top: 0.6rem;
     }
 
+    /* MAIN */
     main {
       max-width: 900px;
       margin: 0 auto 4rem;
       padding: 0 1.5rem;
+      flex: 1;
     }
 
-    .loc-text {
+    .loc-quote {
       font-family: 'EB Garamond', serif;
       font-size: 1.15rem;
-      line-height: 1.75;
+      line-height: 1.8;
       text-align: justify;
       color: #F5EFFA;
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 5px solid #C9A24D;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.25);
+      border-radius: 4px;
     }
 
-.loc-quote {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.15rem;
-  line-height: 1.8;
-  text-align: justify;
-  color: #F5EFFA;
+    .loc-quote p {
+      margin-bottom: 1.2rem;
+    }
 
-  background: rgba(255, 255, 255, 0.06);
-  border-left: 5px solid #C9A24D;
-  padding: 1.8rem 2rem;
-  margin: 0;
+    .loc-quote p:last-child {
+      margin-bottom: 0;
+    }
 
-  box-shadow: 0 0 12px rgba(0,0,0,0.25);
-  border-radius: 4px;
-}
+    .quote-source {
+      margin-top: 1.2rem;
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #E6D8A8;
+    }
 
-.loc-quote p {
-  margin-top: 0;
-  margin-bottom: 1.2rem;
-}
+    .pdf-download {
+      margin-top: 3rem;
+      text-align: center;
+    }
 
-.loc-quote p:last-child {
-  margin-bottom: 0;
-}
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #3A1B5A;
+      background-color: #C9A24D;
+      text-decoration: none;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-.quote-source {
-  margin-top: 1.2rem;
-  text-align: right;
-  font-size: 0.95rem;
-  font-style: italic;
-  color: #E6D8A8;
-}
+    .pdf-download a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+    }
 
-.pdf-download {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.pdf-download a {
-  display: inline-block;
-  padding: 0.9rem 1.8rem;
-
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-
-  color: #3A1B5A;
-  background-color: #C9A24D;
-
-  text-decoration: none;
-  border-radius: 999px;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.pdf-download a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
-}
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      nav .logo-nav {
+        font-size: 1.8rem;
+      }
+    }
 
     @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 0.5rem;
+      }
+
+      nav ul.show {
+        max-height: 500px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
       header h1 {
-        font-size: 2.6rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
       }
 
       header h2 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
       }
     }
   </style>
@@ -152,22 +199,32 @@
 
 <body>
 
-  <nav>
-    <a href="sobrenos.html">Sobre nós</a>
-    <a href="regra.html">Regra</a>
-    <a href="inicio.html">Início</a>
-    <a href="catecismo.html">Catecismo</a>
-    <a href="postagens.html">Postagens</a>
-    <a href="documentos.html">Documentos</a>
-    <a href="contato.html">Contato</a>
-  </nav>
+<nav>
+  <div class="logo-nav">Cristo Operário</div>
 
-  <header>
-    <h1>LIVRO DE ORAÇÃO COMUM</h1>
-    <h2>Book of Common Prayer</h2>
-  </header>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-  <main>
+  <ul id="nav-links">
+    <li><a href="sobrenos.html">Sobre nós</a></li>
+    <li><a href="regra.html">Regra</a></li>
+    <li><a href="inicio.html">Início</a></li>
+    <li><a href="catecismo.html">Catecismo</a></li>
+    <li><a href="postagens.html">Postagens</a></li>
+    <li><a href="documentos.html">Documentos</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Livro de Oração Comum</h1>
+  <h2>Book of Common Prayer</h2>
+</header>
+
+<main>
 <blockquote class="loc-quote">
       <p>Jamais houve algo tão bem elaborado pela sabedoria humana, ou tão firmemente estabelecido, que (com o decorrer do tempo) não fosse corrompido, quanto as orações comuns da Igreja, chamadas de culto divino, como pode ser claramente observado (entre outras coisas). Se fossemos pesquisar entre os anciões, descobriríamos que os primeiros textos escritos foram estabelecidos com bons propósitos e em busca de uma maior santidade; pois eles exigiam que toda a Bíblia (ou pelo menos grande parte dela) fosse lida uma vez ao longo do ano, com a intenção de que o Clero, especialmente os ministros de congregações, fosse inspirado (através da leitura e meditação sobre a Palavra de Deus) para buscar a santidade, e estivesse mais capacitado para exortar outros através da doutrina salutar, e para desafiar aqueles que eram adversários da verdade. E mais, que o povo (ouvindo as Escrituras Sagradas lidas na Igreja) pudesse aprofundar-se cada vez mais no conhecimento de Deus, e ser contagiado pelo amor da sua verdadeira religião. Mas com o passar dos anos essa ordem divina e digna dos nossos ancestrais foi tão alterada, quebrada e negligenciada, pela complementação de histórias incertas, legendas, responsos, versos, vãs repetições, comemorações e sínodos, que, quando qualquer livro da Bíblia começava, apenas três ou quatro capítulos eram lidos, e o resto deixado de lado. Assim o livro de Isaías começava a ser lido no Advento, e o livro de Gênesis na Quaresma; mas apenas começavam, nunca eram lidos por completo. Outros livros das Sagradas Escrituras eram usados de maneira semelhante. Além do mais, enquanto Paulo preferisse que, na igreja, se usasse uma linguagem que o povo pudesse entender e, assim, aprender com aquilo que escutavam, o culto nessa Igreja da Inglaterra (durante muitos anos) tem sido em Latim – língua que o povo não entendia. Dessa maneira o povo ouvia apenas com os ouvidos, e o seu coração, seu espírito e sua mente não foram edificados através dessa palavra. Além do mais, embora os ancestrais tivessem dividido os salmos em sete partes, cada uma chamada de noturna ou vespertina, nos últimos tempos alguns estão sendo recitados todos os dias (e muitas vezes repetidos), e outros totalmente omitidos. Também o número e a rigidez das regras, e as numerosas mudanças nos cultos fizeram com que a leitura da Bíblia se tornasse um assunto tão complicado que, muitas vezes, era mais trabalhoso descobrir quais eram os livros a serem lidos do que a própria leitura dos livros em si.</p>
 <p>Considerando essas inconveniências, apresentamos aqui uma ordem reorganizada para a leitura. E para facilitar a questão, traçamos um Calendário simples e fácil de entender, para que a leitura das Escrituras seja feita de maneira ordenada, sem tirar nenhum versículo. Para isso foram cortados Hinos, Responsos, Invitatórios e outras coisas semelhantes que quebravam o curso contínuo da leitura das Escrituras. Porém, existe a necessidade de ter algumas regras: portanto seguem umas poucas regras, que são claras e fáceis de entender. Então temos aqui um rito de oração (como a leitura das Santas Escrituras) que agrade muito a mente e o propósito dos nossos pais na fé, e que é muito mais proveitoso e agradável do que aquele que estava sendo utilizado ultimamente. É mais útil porque muitas coisas foram tiradas; algumas eram falsas, outras incertas, outras vaidosas e supersticiosas, e ele ordena que nada seja lido além da palavra pura de Deus, as Escrituras Sagradas, ou aquilo que evidentemente se baseia nelas: e tudo escrito usando uma linguagem e ordem mais fácil e clara para a compreensão tanto do leitor quanto do ouvinte. Também é mais agradável por ser mais curto e por ter uma ordem mais simples, com apenas algumas regras fáceis. Igualmente, com essa ordem, o clero não vai precisar de outros livros para as celebrações além desse livro e a Bíblia, e com isso o povo não seria cobrado por tantos livros, como foram no passado.</p>
@@ -179,15 +236,21 @@ Prefácio do <em>Livro de Oração Comum</em>, 1549<br />
 </footer>
 </blockquote>
 
-<div class="pdf-download">
-  <a href="loc-1987.pdf" target="_blank" rel="noopener">
-    Baixe o LOC
-  </a>
-</div>
+  <div class="pdf-download">
+    <a href="loc-1987.pdf" target="_blank" rel="noopener">
+      Baixe o LOC
+    </a>
+  </div>
+</main>
 
-    </div>
-  </main>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
-
