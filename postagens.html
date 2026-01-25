@@ -6,38 +6,78 @@
   <title>Página em construção</title>
 
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<link rel="icon" type="image/png" href="favicon.png">
   <style>
-    body {
+    /* Reset básico */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom, #3a1b5a, #6a3fa0, #b18ae0);
-      color: #F1ECF8;
+      color: #2a143d;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
+    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
       background-color: #3A1B5A;
-      padding: 1rem 0;
-      text-align: center;
+      padding: 0.8rem 1rem;
+      z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    nav a {
+    nav .logo-nav {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      color: #C9A24D;
+      letter-spacing: 1px;
+      margin-left: 0.5rem; /* distância no mobile */
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      transition: max-height 0.3s ease;
+    }
+
+    nav ul li a {
       color: #E6D8A8;
       text-decoration: none;
-      margin: 0 1.5rem;
       font-weight: 700;
       font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover {
+    nav ul li a:hover {
       color: #F5EBCB;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #E6D8A8;
     }
 
     main {
@@ -79,45 +119,82 @@
       font-style: italic;
     }
 
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      nav .logo-nav {
+        font-size: 1.8rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+    }
+
     @media (max-width: 600px) {
+      nav .logo-nav {
+        margin-left: 0.5rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 0.5rem;
+      }
+
+      nav ul.show {
+        max-height: 500px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      /* Apenas no mobile: título menor */
       .box h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
-
 <body>
 
-<nav>
-  <a href="sobrenos.html">Sobre nós</a>
-  <a href="regra.html">Regra</a>
-  <a href="loc.html">LOC</a>
-  <a href="catecismo.html">Catecismo</a>
-  <a href="inicio.html">Início</a>
-  <a href="documentos.html">Documentos</a>
-  <a href="contato.html">Contato</a>
-</nav>
+  <nav>
+    <div class="logo-nav">Cristo Operário</div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="sobrenos.html">Sobre nós</a></li>
+      <li><a href="regra.html">Regra</a></li>
+      <li><a href="loc.html">LOC</a></li>
+      <li><a href="catecismo.html">Catecismo</a></li>
+      <li><a href="inicio.html">Início</a></li>
+      <li><a href="documentos.html">Documentos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
 
-<main>
-  <div class="box">
-    <h1>Página ainda não disponível</h1>
+  <main>
+    <div class="box">
+      <h1>Página ainda não disponível</h1>
+      <p>Pedimos desculpas. Esta página ainda está em processo de elaboração e será publicada em breve.</p>
+      <p>Nosso trabalho é feito com cuidado, estudo e responsabilidade com a Tradição. Preferimos o silêncio ao improviso.</p>
+      <p class="small">Volte em breve.</p>
+    </div>
+  </main>
 
-    <p>
-      Pedimos desculpas.  
-      Esta página ainda está em processo de elaboração e será publicada em breve.
-    </p>
+  <script>
+    // Menu hamburguer mobile
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
-    <p>
-      Nosso trabalho é feito com cuidado, estudo e responsabilidade com a Tradição.
-      Preferimos o silêncio ao improviso.
-    </p>
-
-    <p class="small">
-      Volte em breve.
-    </p>
-  </div>
-</main>
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 
 </body>
 </html>
