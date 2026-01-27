@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Página em construção</title>
+  <title>Sobre nós</title>
 
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    /* Reset básico */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom, #3a1b5a, #6a3fa0, #b18ae0);
-      color: #2a143d;
+      color: #F1ECF8;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -44,7 +44,7 @@
       font-size: 2rem;
       color: #C9A24D;
       letter-spacing: 1px;
-      margin-left: 0.5rem; /* distância no mobile */
+      margin-left: 0.5rem;
     }
 
     nav ul {
@@ -59,7 +59,6 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 1rem;
-      transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
@@ -80,122 +79,399 @@
       background-color: #E6D8A8;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .box {
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 3rem 2.5rem;
-      border-radius: 6px;
-      box-shadow: 0 0 14px rgba(0,0,0,0.3);
+    /* HEADER */
+    header {
       text-align: center;
+      padding: 4rem 1rem 3rem;
     }
 
-    .box h1 {
+    header h1 {
       font-family: 'EB Garamond', serif;
-      font-size: 2.6rem;
-      letter-spacing: 2px;
+      font-size: 4rem;
+      letter-spacing: 3px;
       color: #C9A24D;
-      margin-bottom: 1.2rem;
       text-transform: uppercase;
     }
 
-    .box p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #F1ECF8;
+    header h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #E6D8A8;
+      margin-top: 0.6rem;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      flex: 1;
+    }
+
+    .loc-quote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      text-align: justify;
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 5px solid #C9A24D;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.25);
+      border-radius: 4px;
+    }
+
+    .loc-quote p {
       margin-bottom: 1.4rem;
     }
 
-    .box .small {
-      font-size: 0.95rem;
-      color: #E6D8A8;
-      font-style: italic;
+    .loc-quote p:last-child {
+      margin-bottom: 0;
     }
+
+    .quote-source {
+      margin-top: 1.2rem;
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #E6D8A8;
+    }
+
+.loc-quote {
+  margin-bottom: 2.5rem;
+}
+
+.loc-quote .box-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #E6D8A8;
+  text-align: center;
+  margin-bottom: 1.1rem;
+  margin-top: 0;
+}
+
+.loc-quote h4 {
+  margin-top: 0;
+}
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
       nav .logo-nav {
         font-size: 1.8rem;
       }
-      nav ul {
-        gap: 1rem;
-      }
     }
 
-    @media (max-width: 600px) {
-      nav .logo-nav {
-        margin-left: 0.5rem;
-      }
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
 
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        margin-top: 0.5rem;
-      }
+  nav ul.show {
+    max-height: 500px;
+  }
 
-      nav ul.show {
-        max-height: 500px;
-      }
+  .hamburger {
+    display: flex;
+  }
 
-      .hamburger {
-        display: flex;
-      }
+  header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
 
-      /* Apenas no mobile: título menor */
-      .box h1 {
-        font-size: 1.8rem;
-      }
-    }
+  header h2 {
+    font-size: 1.15rem;
+  }
+} /* ← FECHA AQUI */
+
+/* RETRATOS */
+.retratos {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.retrato-card {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  cursor: default;
+}
+
+.retrato-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.retrato-card h3 {
+  margin-top: 1rem;
+  font-family: 'EB Garamond', serif;
+  color: #C9A24D;
+  font-size: 2rem;
+}
+
+.retrato-card p {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.retratos {
+  margin-bottom: 3rem;
+}
+
+.retratos {
+  margin-top: 3.5rem;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #3A1B5A;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.modal-content h3 {
+  font-family: 'EB Garamond', serif;
+  color: #C9A24D;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  line-height: 1.7;
+}
+
+.close {
+  position: absolute;
+  right: 1.2rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.retrato-card {
+  position: relative; 
+}
+
+/* ÍCONE DA IGREJA */
+.igreja-icon {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  width: 80px;          /* ← tamanho maior */
+  height: 80px;
+  background: rgba(58, 27, 90, 0.85);
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.igreja-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .retratos {
+    gap: 1rem;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+
+  .retrato-card {
+    cursor: pointer;
+  }
+
+@media (max-width: 600px) {
+  .igreja-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+@media (max-width: 600px) {
+  .retratos {
+    flex-direction: column;
+  }
+}
+
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="logo-nav">Cristo Operário</div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul id="nav-links">
-      <li><a href="inicio.html">Início</a></li>
-      <li><a href="regra.html">Regra</a></li>
-      <li><a href="loc.html">LOC</a></li>
-      <li><a href="catecismo.html">Catecismo</a></li>
-      <li><a href="postagens.html">Postagens</a></li>
-      <li><a href="documentos.html">Documentos</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo-nav">Cristo Operário</div>
 
-  <main>
-    <div class="box">
-      <h1>Página ainda não disponível</h1>
-      <p>Pedimos desculpas. Esta página ainda está em processo de elaboração e será publicada em breve.</p>
-      <p>Nosso trabalho é feito com cuidado, estudo e responsabilidade com a Tradição. Preferimos o silêncio ao improviso.</p>
-      <p class="small">Volte em breve.</p>
-    </div>
-  </main>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-  <script>
-    // Menu hamburguer mobile
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  <ul id="nav-links">
+    <li><a href="inicio.html">Início</a></li>
+    <li><a href="regra.html">Regra</a></li>
+    <li><a href="loc.html">LOC</a></li>
+    <li><a href="catecismo.html">Catecismo</a></li>
+    <li><a href="postagens.html">Postagens</a></li>
+    <li><a href="documentos.html">Documentos</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+<header>
+  <h1>SOBRE NÓS</h1>
+  <h2>quem somos e o que defendemos</h2>
+</header>
+
+<main>
+  <blockquote class="loc-quote">
+
+    <p>A Sociedade Anglo-Católica Cristo Operário nasce do compromisso radical com o Evangelho encarnado na história, enraizado na Tradição viva da Igreja e voltado à transformação concreta do mundo. Compreendemos a Tradição não como um museu de fórmulas mortas, mas como a revelação vivida, transmitida e aprofundada pela Igreja primitiva em sua fidelidade ao Verbo de Deus. Orientamo-nos pelo Tripé de Escritura, Tradição e Razão, reconhecendo que a fé cristã se constrói na tensão fecunda entre a Palavra revelada, a experiência histórica da Igreja e o exercício crítico da inteligência humana.</p>
+
+    <p>Nossa identidade é profundamente católica, no sentido pleno e original do termo. Professamos a Fé Santa, Católica e Apostólica, tal como vivida pela Igreja una antes das rupturas entre Oriente e Ocidente e, posteriormente, entre Roma, Cantuária e Wittenberg. Assumimos conscientemente uma vocação ecumênica, que se distingue tanto das inovações papais centralizadoras quanto dos reducionismos puritanos, permanecendo firmemente ancorada na doutrina da Cruz, onde Deus se revela na fraqueza, na entrega e na solidariedade com os crucificados da história.</p>
+
+<p>Defendemos a liberdade teológica como princípio evangélico e eclesial. Todas as formulações que não contrariem os Dogmas da Santa Fé são legítimas no seio da Igreja. Por isso, afirmamos com clareza: Unidade na diversidade. A pluralidade de leituras, espiritualidades e caminhos não é ameaça, mas sinal da riqueza do Corpo de Cristo, desde que permaneça enraizada no amor, na verdade e na comunhão.</p>
+
+<p>Comprometemo-nos com a conservação crítica do Depósito da Fé. Para nós, conservar não significa paralisar a Igreja no tempo. Conservaremos aquilo que é verdadeiro e fiel ao Evangelho, reformaremos o que se tornou desgaste histórico e rejeitaremos os extremos que deformam tanto a tradição quanto a renovação. A fidelidade cristã exige discernimento, coragem e constante conversão.</p>
+
+<p>Cremos que a Igreja é o Corpo de Cristo, e que Cristo, como sujeito encarnado, sofre juntamente com cada um de seus membros. Por isso, denunciamos toda tentativa de privatizar a fé, de esvaziá-la de seu conteúdo social e político ou de cooptá-la para projetos mesquinhos de poder. A fé cristã é pública, comunitária e inseparável da vida concreta do povo.</p>
+
+<p>Nosso carisma coletivo é claro e inegociável: a Opção Preferencial pelos Pobres, tal como nos foi legada pelo Bem-aventurado Gustavo Gutiérrez. Reconhecemos e respeitamos os diversos carismas individuais, mas afirmamos que, enquanto corpo eclesial, nossa vocação é caminhar ao lado dos pobres, dos trabalhadores, dos marginalizados e dos esquecidos, não como objeto de caridade, mas como sujeitos da história da salvação.</p>
+
+<p>Vivemos um Cristianismo Ativo, marcado por uma espiritualidade escatológica comprometida. A esperança no “mundo que há de vir” jamais pode servir de justificativa para a passividade diante das estruturas injustas do mundo presente. Inspiramo-nos no jejum anunciado pelo profeta Isaías: libertar os oprimidos, romper as correntes da injustiça, repartir o pão com os famintos, acolher os sem-teto, vestir os nus, cuidar dos nossos e manter viva a memória dos mártires da caminhada. É nesse chão histórico, de luta e esperança, que damos testemunho do Cristo Operário, que trabalha, sofre e ressuscita com o povo.</p>
+
+    <footer class="quote-source">
+      Victoria — 26/01/2026
+    </footer>
+  </blockquote>
+
+<blockquote class="loc-quote">
+  <h4 class="box-title">Quem são nossas grandes inspirações?</h4>
+<p>São Oscar Romero da Igreja Católica Apostólica Romana e o bem-aventurado Jaci Marachin, da Igreja Anglicana, representam duas expressões distintas, porém profundamente convergentes, do cristianismo comprometido com a justiça social na América Latina. Vindos de tradições eclesiais diferentes, ambos assumiram uma fé encarnada na realidade do povo pobre, transformando o Evangelho em denúncia profética contra a opressão e a violência.</p>
+  </blockquote>
+
+<section class="retratos">
+
+  <div class="retrato-card" data-modal="modal1">
+
+<span class="igreja-icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Emblem_of_the_Papacy_SE.svg/500px-Emblem_of_the_Papacy_SE.svg.png" alt="Igreja de Romero">
+</span>
+
+    <img src="https://jesuitas.lat/archivo/images/noticias/2020/03/SAN_OSCAR_ROMERO_2020.jpg" alt="Retrato 1">
+    <h3>Santo Óscar Romero</h3>
+    <p class="desktop-text">
+      Oscar Romero, arcebispo católico de El Salvador, tornou-se referência mundial ao denunciar publicamente os crimes do Estado, a repressão militar e as estruturas de injustiça que atingiam os mais pobres. Sua atuação pastoral rompeu com qualquer ideia de neutralidade da Igreja frente ao sofrimento humano. Ao afirmar que “a missão da Igreja é identificar-se com os pobres”, Romero selou seu testemunho com o martírio, sendo assassinado em 1980 enquanto celebrava a Eucaristia.
+    </p>
+  </div>
+
+  <div class="retrato-card" data-modal="modal2">
+
+<span class="igreja-icon">
+  <img src="ieab.png" alt="Igreja Anglicana">
+</span>
+
+    <img src="https://i.ytimg.com/vi/IklB_YK8QPo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCZnAkJp6n664kCcfiLarNHYdYNZg" alt="Retrato 2">
+    <h3>"Bem-aventurado" Jaci Maraschin</h3>
+    <p class="desktop-text">
+      Jaci Marachin, no contexto da Igreja Episcopal Anglicana do Brasil, expressa uma espiritualidade marcada pelo compromisso social, pela defesa da dignidade humana e por uma prática cristã profundamente conectada às lutas populares. Sua trajetória revela uma fé vivida para além dos templos, comprometida com a transformação da realidade e com a construção de uma sociedade mais justa. Ao ser reconhecido como bem-aventurado, Jaci simboliza uma santidade que nasce do chão da vida cotidiana e da fidelidade ao Evangelho vivido em chave comunitária e libertadora.
+    </p>
+  </div>
+
+</section>
+
+  <blockquote class="loc-quote">
+<p>O encontro simbólico entre Romero e Marachin revela que a profecia cristã ultrapassa fronteiras confessionais. Católico e anglicano, ambos testemunham que o seguimento de Jesus exige posicionamento claro diante da injustiça. Suas vidas afirmam que o Reino de Deus não é neutro: ele se manifesta onde há defesa da vida, dos pobres e dos marginalizados. Assim, falar de Oscar Romero e de Jaci Marachin em conjunto é afirmar uma santidade ecumênica, própria da América Latina, onde a fé cristã se expressa como resistência, solidariedade e esperança ativa. Eles continuam a nos provocar a construir uma Igreja ou melhor, Igrejas que caminhem com o povo e façam da fé um instrumento de libertação.</p>
+  </blockquote>
+
+</main>
+
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Santo Óscar Romero</h3>
+    <p>
+      Oscar Romero, arcebispo católico de El Salvador, tornou-se referência mundial ao denunciar publicamente os crimes do Estado, a repressão militar e as estruturas de injustiça que atingiam os mais pobres. Sua atuação pastoral rompeu com qualquer ideia de neutralidade da Igreja frente ao sofrimento humano. Ao afirmar que “a missão da Igreja é identificar-se com os pobres”, Romero selou seu testemunho com o martírio, sendo assassinado em 1980 enquanto celebrava a Eucaristia.
+    </p>
+  </div>
+</div>
+
+<div class="modal" id="modal2">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>"Bem-aventurado" Jaci Maraschin</h3>
+    <p>
+      Jaci Marachin, no contexto da Igreja Episcopal Anglicana do Brasil, expressa uma espiritualidade marcada pelo compromisso social, pela defesa da dignidade humana e por uma prática cristã profundamente conectada às lutas populares. Sua trajetória revela uma fé vivida para além dos templos, comprometida com a transformação da realidade e com a construção de uma sociedade mais justa. Ao ser reconhecido como bem-aventurado, Jaci simboliza uma santidade que nasce do chão da vida cotidiana e da fidelidade ao Evangelho vivido em chave comunitária e libertadora.
+    </p>
+  </div>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  const cards = document.querySelectorAll('.retrato-card');
+  const modals = document.querySelectorAll('.modal');
+  const closes = document.querySelectorAll('.close');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      if (window.innerWidth <= 600) {
+        const modalId = card.dataset.modal;
+        document.getElementById(modalId).style.display = 'flex';
+      }
     });
-  </script>
+  });
+
+  closes.forEach(close => {
+    close.addEventListener('click', () => {
+      close.closest('.modal').style.display = 'none';
+    });
+  });
+
+  modals.forEach(modal => {
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
-
