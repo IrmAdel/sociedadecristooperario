@@ -335,10 +335,9 @@
   border-radius: 4px;
 }
 
-    /* VÍDEO DO HINO */
+/* VÍDEO DO HINO — CORRETO */
 .hino-video {
   margin: 5rem auto 3rem;
-  max-width: 500px;
   text-align: center;
 }
 
@@ -351,8 +350,15 @@
 }
 
 .video-wrapper {
-  max-width: 420px;
+  position: relative;
+  max-width: 420px;      /* controla o tamanho */
   margin: 0 auto;
+  padding-top: 56.25%;   /* cria altura (16:9) */
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(201,162,77,0.25),
+              0 0 18px rgba(0,0,0,0.35);
+  overflow: hidden;
 }
 
 .video-wrapper iframe {
@@ -519,25 +525,20 @@
   <blockquote class="loc-quote">
 <p>O encontro simbólico entre Romero e Marachin revela que a profecia cristã ultrapassa fronteiras confessionais. Católico e anglicano, ambos testemunham que o seguimento de Jesus exige posicionamento claro diante da injustiça. Suas vidas afirmam que o Reino de Deus não é neutro: ele se manifesta onde há defesa da vida, dos pobres e dos marginalizados. Assim, falar de Oscar Romero e de Jaci Marachin em conjunto é afirmar uma santidade ecumênica, própria da América Latina, onde a fé cristã se expressa como resistência, solidariedade e esperança ativa. Eles continuam a nos provocar a construir uma Igreja ou melhor, Igrejas que caminhem com o povo e façam da fé um instrumento de libertação.</p>
   </blockquote>
-
-<section class="hino-video">
-
-  <h3 class="hino-video-titulo">Hino da Comunidade</h3>
-
-</section>
   
 <section class="hino">
 
-  <h3 class="hino-titulo">Nosso Hino</h3>
+  <section class="hino-video">
+  <h3 class="hino-video-titulo">Hino da Comunidade</h3>
 
   <div class="video-wrapper">
     <iframe
       src="https://www.youtube.com/embed/SEU_VIDEO_AQUI"
       frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
+</section>
   
   <div class="hino-box">
     <p>
@@ -651,6 +652,7 @@
 
 </body>
 </html>
+
 
 
 
