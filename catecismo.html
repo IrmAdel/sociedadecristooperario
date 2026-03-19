@@ -3,70 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Página em construção</title>
+  <title>Catecismo - Cristo Operário</title>
 
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom, #3a1b5a, #6a3fa0, #b18ae0);
       color: #2a143d;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
       background-color: #3A1B5A;
       padding: 0.8rem 1rem;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
     }
 
-    nav .logo-nav {
+    .logo-nav {
       font-family: 'EB Garamond', serif;
       font-size: 2rem;
       color: #C9A24D;
-      letter-spacing: 1px;
-      margin-left: 0.5rem; /* distância no mobile */
     }
 
     nav ul {
       display: flex;
       list-style: none;
       gap: 1.5rem;
-      transition: max-height 0.3s ease;
     }
 
     nav ul li a {
       color: #E6D8A8;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
-      transition: color 0.3s ease;
     }
 
-    nav ul li a:hover {
-      color: #F5EBCB;
-    }
-
-    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -80,121 +61,264 @@
       background-color: #E6D8A8;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .box {
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 3rem 2.5rem;
-      border-radius: 6px;
-      box-shadow: 0 0 14px rgba(0,0,0,0.3);
+    header {
       text-align: center;
+      padding: 2.5rem 1rem 1rem;
     }
 
-    .box h1 {
+    header h1 {
       font-family: 'EB Garamond', serif;
-      font-size: 2.6rem;
-      letter-spacing: 2px;
+      font-size: 3rem;
       color: #C9A24D;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
     }
 
-    .box p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #F1ECF8;
-      margin-bottom: 1.4rem;
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    .box .small {
-      font-size: 0.95rem;
+    #filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    select, input {
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+    }
+
+    select {
+      background-color: #4B1E6D;
       color: #E6D8A8;
-      font-style: italic;
+    }
+
+    input {
+      background-color: rgba(255,255,255,0.9);
+      min-width: 220px;
+    }
+
+    /* TAGS */
+    .tags-filter {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .tag-btn {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.15);
+      color: #E6D8A8;
+      cursor: pointer;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .tag-btn.active {
+      background: #C9A24D;
+      color: #3A1B5A;
+    }
+
+    /* GRID */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .post {
+      background: rgba(255 255 255 / 0.08);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0 0 0 / 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tag-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      background: rgba(201,162,77,0.2);
+      color: #C9A24D;
+      margin-bottom: 0.5rem;
+    }
+
+    .post h3 a {
+      color: #C9A24D;
+      text-decoration: none;
+      font-family: 'EB Garamond', serif;
+      font-size: 1.4rem;
+    }
+
+    .post p {
+      color: #F1ECF8;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+      flex-grow: 1;
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #E6D8A8;
     }
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
-      nav .logo-nav {
-        font-size: 1.8rem;
-      }
-      nav ul {
-        gap: 1rem;
-      }
+      .posts-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
-      nav .logo-nav {
-        margin-left: 0.5rem;
-      }
-
       nav ul {
         flex-direction: column;
         width: 100%;
         max-height: 0;
         overflow: hidden;
-        margin-top: 0.5rem;
       }
-
-      nav ul.show {
-        max-height: 500px;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      /* Apenas no mobile: título menor */
-      .box h1 {
-        font-size: 1.8rem;
-      }
+      nav ul.show { max-height: 500px; }
+      .hamburger { display: flex; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo-nav">Cristo Operário</div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul id="nav-links">
-      <li><a href="sobrenos.html">Sobre nós</a></li>
-      <li><a href="regra.html">Regra</a></li>
-      <li><a href="loc.html">LOC</a></li>
-      <li><a href="inicio.html">Início</a></li>
-      <li><a href="postagens.html">Postagens</a></li>
-      <li><a href="documentos.html">Documentos</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo-nav">Cristo Operário</div>
+  <div class="hamburger" id="hamburger">
+    <div></div><div></div><div></div>
+  </div>
+  <ul id="nav-links">
+    <li><a href="sobrenos.html">Sobre nós</a></li>
+    <li><a href="regra.html">Regra</a></li>
+    <li><a href="loc.html">LOC</a></li>
+    <li><a href="catecismo.html">Catecismo</a></li>
+    <li><a href="inicio.html">Início</a></li>
+    <li><a href="documentos.html">Documentos</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
 
-  <main>
-    <div class="box">
-      <h1>Página ainda não disponível</h1>
-      <p>Pedimos desculpas. Esta página ainda está em processo de elaboração e será publicada em breve.</p>
-      <p>Nosso trabalho é feito com cuidado, estudo e responsabilidade com a Tradição. Preferimos o silêncio ao improviso.</p>
-      <p class="small">Volte em breve.</p>
-    </div>
-  </main>
+<header>
+  <h1>Catecismo</h1>
+</header>
 
-  <script>
-    // Menu hamburguer mobile
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+<main>
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  </script>
+<div id="filters">
+  <select id="filter-time">
+    <option value="all">Todos</option>
+    <option value="30">Últimos 30 dias</option>
+    <option value="180">Últimos 6 meses</option>
+    <option value="365">Último ano</option>
+  </select>
+  <input type="search" id="search" placeholder="Pesquisar postagens...">
+</div>
+
+<div class="tags-filter" id="tag-filter">
+  <div class="tag-btn active" data-tag="all">Todas</div>
+  <div class="tag-btn" data-tag="LT">Luteranismo</div>
+  <div class="tag-btn" data-tag="ac">Anglicanismo</div>
+  <div class="tag-btn" data-tag="icar">ICAR</div>
+</div>
+
+<div class="posts-grid">
+
+<article class="post" data-date=1992-12-07" data-tag="icar">
+  <div>
+    <span class="tag-label">ICAR</span>
+    <h3><a href="https://diocesedemiracemato.org.br/upload/arquivos/214.pdf">Catecismo da Igreja Católica</a></h3>
+    <p>O DEPÓSITO DA FÉ é a missão que o Senhor confiou à sua Igreja e que ela cumpre em todos os tempos. O Concílio Ecumênico Vaticano II.</p>
+  </div>
+  <div class="post-footer">
+    <span>17 de Dezembor de 1992</span>
+    <span>São João Paulo II</span>
+  </div>
+</article>
+
+<article class="post" data-date=2005-28-06" data-tag="icar">
+  <div>
+    <span class="tag-label">ICAR</span>
+    <h3><a href="https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_po.html">Catecismo da Igreja Católica - Compêndio</a></h3>
+    <p>Há já vinte anos que se iniciou a elaboração do Catecismo da Igreja Católica, pedido pela Assembleia Extraordinária do Sínodo dos Bispos, por ocasião do vigésimo aniversário do encerramento do Concílio Vaticano II. Agora com grande alegria aprovo e promulgo o Compêndio de tal Catecismo.</p>
+  </div>
+  <div class="post-footer">
+    <span>28 de junho de 2005</span>
+    <span>Papa Bento XVI</span>
+  </div>
+</article>
+
+<article class="post" data-date=2025-22-08" data-tag="ac">
+  <div>
+    <span class="tag-label">Anglicanismo</span>
+    <h3><a href="????">39 Artigos de Adel</a></h3>
+    <p>Artigos da Religião; concordados pelos Arcebispos e Bispos de ammbas as Províncias e todo o clero na Convocação realizada em Londres no ano de 1562, visando evitar diversidades de opniões e estabelecer um consenso sobre a Verdadeira Religião. Mas agora atualizada para uma vivencia Anglo-Católica.</p>
+  </div>
+  <div class="post-footer">
+    <span>22 de Agosto de 2025</span>
+    <span>Irm. Adel (membro da Sociedade)</span>
+  </div>
+</article>
+
+</div>
+
+</main>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+const posts = document.querySelectorAll('.post');
+const filter = document.getElementById('filter-time');
+const search = document.getElementById('search');
+const tagButtons = document.querySelectorAll('.tag-btn');
+let activeTag = 'all';
+
+function filterPosts() {
+  const days = parseInt(filter.value);
+  const text = search.value.toLowerCase();
+  const today = new Date();
+
+  posts.forEach(post => {
+    const date = new Date(post.dataset.date);
+    const diff = (today - date) / (1000*60*60*24);
+    const tag = post.dataset.tag;
+
+    const matchTime = isNaN(days) || diff <= days;
+    const matchTag = activeTag === 'all' || tag === activeTag;
+    const content = post.innerText.toLowerCase();
+    const matchText = content.includes(text);
+
+    post.style.display = (matchTime && matchTag && matchText) ? '' : 'none';
+  });
+}
+
+filter.addEventListener('change', filterPosts);
+search.addEventListener('input', filterPosts);
+
+tagButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tagButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTag = btn.dataset.tag;
+    filterPosts();
+  });
+});
+</script>
 
 </body>
 </html>
